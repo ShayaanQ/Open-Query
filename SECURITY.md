@@ -1,7 +1,7 @@
 # Security Policy
 
 ## Reporting a Vulnerability
-Please report security issues privately by opening a GitHub security advisory or emailing `abbasovfarid22@gmail.com`.
+Please report security issues privately by opening a GitHub security advisory or emailing `shayaanqureshi25@gmail.com`.
 
 Do not open public issues for sensitive vulnerabilities.
 
