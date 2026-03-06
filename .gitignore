@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.next/
+.turbo/
+.cache/
+*.tsbuildinfo
+.DS_Store
+.Rhistory
+.env
+.env.*
+!.env.example
+*.db
+*.sqlite
+target/
+.openquery/
