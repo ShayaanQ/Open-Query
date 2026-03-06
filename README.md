@@ -4,11 +4,11 @@
   <p><strong>Local-first SQL copilot for teams that need speed with guardrails.</strong></p>
 
   <p>
-    <a href="https://github.com/faridktx/OpenQuery/actions/workflows/lint-typecheck.yml"><img src="https://github.com/faridktx/OpenQuery/actions/workflows/lint-typecheck.yml/badge.svg" alt="lint-typecheck" /></a>
-    <a href="https://github.com/faridktx/OpenQuery/actions/workflows/unit-tests.yml"><img src="https://github.com/faridktx/OpenQuery/actions/workflows/unit-tests.yml/badge.svg" alt="unit-tests" /></a>
-    <a href="https://github.com/faridktx/OpenQuery/actions/workflows/integration-postgres.yml"><img src="https://github.com/faridktx/OpenQuery/actions/workflows/integration-postgres.yml/badge.svg" alt="integration-postgres" /></a>
-    <a href="https://github.com/faridktx/OpenQuery/actions/workflows/desktop-build.yml"><img src="https://github.com/faridktx/OpenQuery/actions/workflows/desktop-build.yml/badge.svg" alt="desktop-build" /></a>
-    <a href="LICENSE"><img src="https://img.shields.io/github/license/faridktx/OpenQuery" alt="license" /></a>
+    <a href="https://github.com/ShayaanQ/Open-Query/actions/workflows/lint-typecheck.yml"><img src="https://github.com/ShayaanQ/Open-Query/actions/workflows/lint-typecheck.yml/badge.svg" alt="lint-typecheck" /></a>
+    <a href="https://github.com/ShayaanQ/Open-Query/actions/workflows/unit-tests.yml"><img src="https://github.com/ShayaanQ/Open-Query/actions/workflows/unit-tests.yml/badge.svg" alt="unit-tests" /></a>
+    <a href="https://github.com/ShayaanQ/Open-Query/actions/workflows/integration-postgres.yml"><img src="https://github.com/ShayaanQ/Open-Query/actions/workflows/integration-postgres.yml/badge.svg" alt="integration-postgres" /></a>
+    <a href="https://github.com/ShayaanQ/Open-Query/actions/workflows/desktop-build.yml"><img src="https://github.com/ShayaanQ/Open-Query/actions/workflows/desktop-build.yml/badge.svg" alt="desktop-build" /></a>
+    <a href="LICENSE"><img src="https://img.shields.io/github/license/ShayaanQ/Open-Query" alt="license" /></a>
   </p>
 
   <p>
@@ -45,13 +45,16 @@ Teams want AI-assisted querying, but do not want unbounded query risk.
 - Eval harness and benchmark scripts for regression tracking
 
 ## 2-Minute Quickstart (Desktop)
+
 ### Option A: No-Docker demo (recommended)
+
 ```bash
 pnpm install
 pnpm --filter @openquery/desktop dev:tauri
 ```
 
 Then in the app:
+
 1. Open `Setup`.
 2. Choose `Demo (No Docker)`.
 3. Click `Create demo profile`.
@@ -59,6 +62,7 @@ Then in the app:
 5. Run the first query from Setup or Workspace.
 
 ### Option B: Docker Postgres demo
+
 ```bash
 docker info
 pnpm smoke:docker
@@ -67,27 +71,30 @@ pnpm --filter @openquery/desktop dev:tauri
 
 Then in `Setup`, choose `Demo (Docker Postgres)` and click `Start`.
 
-Full recruiter flow: `docs/recruiter-demo.md`
-No-Docker deep-dive: `docs/DEMO_NODOCKER.md`
+Full recruiter flow: `docs/recruiter-demo.md`  
+No-Docker deep-dive: `docs/DEMO_NODOCKER.md`  
 Docker deep-dive: `docs/DEMO_DOCKER.md`
 
 Verified integration command:
+
 ```bash
 pnpm smoke:integration
 ```
 
 ## Quickstart (CLI)
+
 ```bash
-npm config set @faridktx:registry https://npm.pkg.github.com
-npm i -g @faridktx/openquery-cli
+npm config set @ShayaanQ:registry https://npm.pkg.github.com
+npm i -g @ShayaanQ/openquery-cli
 openquery doctor
 oq doctor
 ```
 
-Detailed CLI usage: `docs/cli.md`
+Detailed CLI usage: `docs/cli.md`  
 Enterprise CLI contract: `docs/CLI_CONTRACT.md`
 
 ## How It Works
+
 ![Architecture](assets/architecture/openquery-architecture.svg)
 
 - `apps/desktop`: Tauri frontend + Rust bridge commands
@@ -96,6 +103,7 @@ Enterprise CLI contract: `docs/CLI_CONTRACT.md`
 - `infra/docker`: Postgres fixture and seed data
 
 ## Guardrails and Safety Model
+
 - Safe mode validates and can block risky SQL before execution.
 - EXPLAIN gating adds cost/row-risk checks.
 - POWER mode requires explicit confirmation for writes.
@@ -104,6 +112,7 @@ Enterprise CLI contract: `docs/CLI_CONTRACT.md`
 Details: `docs/SECURITY.md`, `docs/THREAT_MODEL.md`
 
 ## Repository Structure
+
 ```text
 OpenQuery/
 ├─ apps/
@@ -120,18 +129,22 @@ OpenQuery/
 ```
 
 ## Roadmap (Current)
+
 - Improve desktop onboarding and readability polish
 - Expand policy presets and profile-level defaults
 - Add richer eval datasets for SQL safety regressions
 - Harden CI release workflow for desktop artifacts
 
 ## Contributing
+
 Start with:
+
 - `docs/dev-setup.md`
 - `docs/README.md`
 - `CONTRIBUTING.md`
 
 Core checks:
+
 ```bash
 pnpm -r build
 pnpm -r test
@@ -140,14 +153,17 @@ pnpm typecheck
 ```
 
 Packaging checks:
+
 ```bash
 pnpm --filter @openquery/desktop tauri build --no-bundle
 pnpm --filter @openquery/desktop build:bundle
 ```
 
 Current macOS bundle outputs:
+
 - `.app` under `apps/desktop/src-tauri/target/release/bundle/macos/`
 - `.dmg` under `apps/desktop/src-tauri/target/release/bundle/dmg/`
 
 ## License
+
 MIT. See `LICENSE`.
